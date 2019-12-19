@@ -556,10 +556,37 @@ void Sort_heap(int list[])
 }
 int main()
 {
-	int list[10] = { 0, 70, 45, 35, 15, 20, 85, 75, 55 };
 
-	PrintList(list);
-	Make_heap(list, 8);
-	Sort_heap(list);
-	PrintList(list);
+
+	if (NULL == 0)
+	{
+		cout << "1같다" << endl;
+	}
+	if (NULL =='\0')
+	{
+		cout << "2같다" << endl;
+	}
+	if (NULL =="")
+	{
+		cout << "3같다" << endl;
+	}
+	if (nullptr == 0)
+	{
+		cout << "4같다" << endl;
+		cout << (int)nullptr << endl;
+	}
+
+	while (nullptr)
+	{
+		cout << "hi" << endl;
+	}
+	string s = "";
+
+	char buf[3] = "";
+	
+	if (buf[0] == 0)
+	{
+		cout << "hi" << endl;
+	}
+
 }
