@@ -554,39 +554,29 @@ void Sort_heap(int list[])
 	for (int i = 0; i < size; ++i)
 		Pop_heap(list);
 }
+class Parent
+{
+private:
+	int a;
+	int b;
+
+};
+
+class Child : public Parent
+{
+private:
+	int c;
+
+public:
+	int d;
+
+};
 int main()
 {
 
+	Parent* pchild = new Child();
 
-	if (NULL == 0)
-	{
-		cout << "1같다" << endl;
-	}
-	if (NULL =='\0')
-	{
-		cout << "2같다" << endl;
-	}
-	if (NULL =="")
-	{
-		cout << "3같다" << endl;
-	}
-	if (nullptr == 0)
-	{
-		cout << "4같다" << endl;
-		cout << (int)nullptr << endl;
-	}
 
-	while (nullptr)
-	{
-		cout << "hi" << endl;
-	}
-	string s = "";
-
-	char buf[3] = "";
-	
-	if (buf[0] == 0)
-	{
-		cout << "hi" << endl;
-	}
+	cout << sizeof(*pchild) << endl;
 
 }
