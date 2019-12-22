@@ -1,2 +1,4 @@
 ﻿  main.cpp
-  Project4.vcxproj -> D:\Project reposit\C_Exercise\Project4\Debug\Project4.exe
+D:\Project reposit\C_Exercise\Project4\Project4\main.cpp(594,14): error C2664: 'void Print_Foo(Test)': 인수 1을(를) 'int'에서 'Test'(으)로 변환할 수 없습니다.
+D:\Project reposit\C_Exercise\Project4\Project4\main.cpp(594,14): message : class 'Test'의 생성자가 'explicit'으로 선언되었습니다.
+D:\Project reposit\C_Exercise\Project4\Project4\main.cpp(586,6): message : 'Print_Foo' 선언을 참조하십시오.

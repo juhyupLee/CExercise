@@ -571,16 +571,26 @@ public:
 	int d;
 
 };
+
+class Test
+{
+public:
+	int m_foo;
+	explicit Test (int foo)
+		: m_foo(foo)
+	{
+	}
+
+};
+
+void Print_Foo(Test foo)
+{
+	cout << foo.m_foo << endl;
+}
 int main()
 {
 
-	Parent* pchild = new Child();
-
-
-	cout << sizeof(*pchild) << endl;
-
-	cout << "Git Hub Test" << endl;
-	cout << "Git Hub Test2" << endl;
-
+	int num = 43;
+	Print_Foo(43);
 
 }
