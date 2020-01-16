@@ -2,7 +2,6 @@
 #include <iostream>
 #include <iomanip>
 #include <map>
-#include "Cat.h"
 #include <bitset>
 #include "Foo.h"
 #include <vector>
@@ -10,6 +9,8 @@
 #include <limits>
 #include <stack>
 #include <chrono>
+#include "TestClass.h"
+
 //
 //
 //using namespace std;
@@ -589,8 +590,7 @@ void Print_Foo(Test foo)
 }
 int main()
 {
-
-	int num = 43;
-	Print_Foo(43);
+	
+	TestClass a; 
 
 }
