@@ -588,9 +588,58 @@ void Print_Foo(Test foo)
 {
 	cout << foo.m_foo << endl;
 }
-int main()
+
+class TClass
+{
+public:
+	
+	int operator* (TClass rhs)
+	{
+		return rhs.mData * mData;
+	}
+	int mData;
+
+
+};
+
+void TestFunc(TClass a)
+{
+
+}
+
+int operator+(TClass& lhs, TClass& rhs)
+{
+	return lhs.mData + rhs.mData;
+}
+
+class TestClass2
 {
 	
-	TestClass a; 
+public:
+	int mData;
+	
+	char& operator[](int index)
+	{
+		return text[index];
+	}
+	const char& operator[](int index)  const
+	{
+		return text[index];
+
+	}
+
+	std::string text;
+
+};
+int main()
+{
+	const TestClass2 a;
+	TestClass2 b;
+
+	b.text = "hhihi";
+
+	b[0] = 10;
+
+
 
 }

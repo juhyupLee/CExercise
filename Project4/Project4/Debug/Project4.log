@@ -1,3 +1,2 @@
 ﻿  main.cpp
-D:\Project reposit\C_Exercise\Project4\Project4\main.cpp(594,12): warning C4101: 'a' :참조되지 않은 지역 변수입니다.
   Project4.vcxproj -> D:\Project reposit\C_Exercise\Project4\Debug\Project4.exe
