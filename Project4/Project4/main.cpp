@@ -618,7 +618,7 @@ class TestClass2
 public:
 	int mData;
 	
-	char& operator[](int index)
+	char operator[](int index)
 	{
 		return text[index];
 	}
@@ -627,19 +627,53 @@ public:
 		return text[index];
 
 	}
-
+public:
 	std::string text;
 
 };
+
+struct Mother
+{
+
+public:
+	void TestFunc()
+	{
+
+	}
+};
+struct TestStruct: public Mother
+{
+	TestStruct()
+	{
+		cout << "구조체 생성자이지롱";
+	}
+	~TestStruct()
+	{
+		cout << "구조체 소멸자이지롱" << endl;
+	}
+};
+
+class Test3
+{
+public:
+	Test3(const char* p)
+	{
+		mP = new char(3);
+		strcpy_s(mP,3, p);
+
+	}
+	char& operator[](std::size_t index) const
+	{
+		return mP[index];
+	}
+
+private:
+	char* mP;
+};
 int main()
 {
-	const TestClass2 a;
-	TestClass2 b;
-
-	b.text = "hhihi";
-
-	b[0] = 10;
-
+	Test3 a("hi1");
+	a[2] = 'c';
 
 
 }
