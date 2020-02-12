@@ -10,6 +10,7 @@
 #include <stack>
 #include <chrono>
 #include "TestClass.h"
+#include <WinSock2.h>
 
 //
 //
@@ -492,188 +493,233 @@
 #include <stdio.h>
 #include <algorithm>
 using namespace std;
+//
+//void Swap(int* pa, int* pb)
+//{
+//	int temp = *pa;
+//	*pa = *pb;
+//	*pb = temp;
+//}
+//void PrintList(int list[])
+//{
+//	printf("size: %d", list[0]);
+//	printf("  [");
+//	for (int i = 1; i <= list[0]; ++i)
+//		printf("%d ", list[i]);
+//	printf("] ");
+//	for (int i = list[0] + 1; i <= 8; ++i)
+//		printf("%d ", list[i]);
+//	printf("\n");
+//}
+//void Push_heap(int list[])
+//{
+//	++list[0];
+//	int size = list[0];
+//	int child = size;
+//	int parent = child / 2;
+//
+//	while (parent > 0)
+//	{
+//		if (list[parent] < list[child])
+//			Swap(&list[parent], &list[child]);
+//		else
+//			break;
+//		child = parent;
+//		parent = child / 2;
+//	}
+//}
+//void Make_heap(int list[], int size)
+//{
+//	for (int i = 0; i < size; ++i)
+//		Push_heap(list);
+//}
+//void Pop_heap(int list[])
+//{
+//	int size = --list[0];
+//	Swap(&list[1], &list[size + 1]);
+//	int parent = 1;
+//	int child = parent * 2;
+//
+//	while (child <= size)
+//	{
+//		if (child < size && list[child] < list[child + 1])
+//			child = child + 1;
+//		if (list[parent] < list[child])
+//			Swap(&list[parent], &list[child]);
+//		parent = child;
+//		child = parent * 2;
+//	}
+//}
+//void Sort_heap(int list[])
+//{
+//	int size = list[0];
+//	for (int i = 0; i < size; ++i)
+//		Pop_heap(list);
+//}
+//class Parent
+//{
+//private:
+//	int a;
+//	int b;
+//
+//};
+//
+//class Child : public Parent
+//{
+//private:
+//	int c;
+//
+//public:
+//	int d;
+//
+//};
+//
+//class Test
+//{
+//public:
+//	int m_foo;
+//	explicit Test (int foo)
+//		: m_foo(foo)
+//	{
+//	}
+//
+//};
+//
+//void Print_Foo(Test foo)
+//{
+//	cout << foo.m_foo << endl;
+//}
+//
+//class TClass
+//{
+//public:
+//	
+//	int operator* (TClass rhs)
+//	{
+//		return rhs.mData * mData;
+//	}
+//	int mData;
+//
+//
+//};
+//
+//void TestFunc(TClass a)
+//{
+//
+//}
+//
+//int operator+(TClass& lhs, TClass& rhs)
+//{
+//	return lhs.mData + rhs.mData;
+//}
+//
+//class TestClass2
+//{
+//	
+//public:
+//	int mData;
+//	
+//	char operator[](int index)
+//	{
+//		return text[index];
+//	}
+//	const char& operator[](int index)  const
+//	{
+//		return text[index];
+//
+//	}
+//public:
+//	std::string text;
+//
+//};
+//
+//struct Mother
+//{
+//
+//public:
+//	void TestFunc()
+//	{
+//
+//	}
+//};
+//struct TestStruct: public Mother
+//{
+//	TestStruct()
+//	{
+//		cout << "±¸Á¶Ã¼ »ý¼ºÀÚÀÌÁö·Õ";
+//	}
+//	~TestStruct()
+//	{
+//		cout << "±¸Á¶Ã¼ ¼Ò¸êÀÚÀÌÁö·Õ" << endl;
+//	}
+//};
+//
+//class Test3
+//{
+//public:
+//	Test3(const char* p)
+//	{
+//		mP = new char(3);
+//
+//
+//	}
+//	char& operator[](std::size_t index) const
+//	{
+//		return mP[index];
+//	}
+//
+//private:
+//	char* mP;
+//};
 
-void Swap(int* pa, int* pb)
-{
-	int temp = *pa;
-	*pa = *pb;
-	*pb = temp;
-}
-void PrintList(int list[])
-{
-	printf("size: %d", list[0]);
-	printf("  [");
-	for (int i = 1; i <= list[0]; ++i)
-		printf("%d ", list[i]);
-	printf("] ");
-	for (int i = list[0] + 1; i <= 8; ++i)
-		printf("%d ", list[i]);
-	printf("\n");
-}
-void Push_heap(int list[])
-{
-	++list[0];
-	int size = list[0];
-	int child = size;
-	int parent = child / 2;
-
-	while (parent > 0)
-	{
-		if (list[parent] < list[child])
-			Swap(&list[parent], &list[child]);
-		else
-			break;
-		child = parent;
-		parent = child / 2;
-	}
-}
-void Make_heap(int list[], int size)
-{
-	for (int i = 0; i < size; ++i)
-		Push_heap(list);
-}
-void Pop_heap(int list[])
-{
-	int size = --list[0];
-	Swap(&list[1], &list[size + 1]);
-	int parent = 1;
-	int child = parent * 2;
-
-	while (child <= size)
-	{
-		if (child < size && list[child] < list[child + 1])
-			child = child + 1;
-		if (list[parent] < list[child])
-			Swap(&list[parent], &list[child]);
-		parent = child;
-		child = parent * 2;
-	}
-}
-void Sort_heap(int list[])
-{
-	int size = list[0];
-	for (int i = 0; i < size; ++i)
-		Pop_heap(list);
-}
 class Parent
 {
+
 private:
 	int a;
 	int b;
-
-};
-
-class Child : public Parent
-{
-private:
 	int c;
 
 public:
-	int d;
-
-};
-
-class Test
-{
-public:
-	int m_foo;
-	explicit Test (int foo)
-		: m_foo(foo)
-	{
-	}
-
-};
-
-void Print_Foo(Test foo)
-{
-	cout << foo.m_foo << endl;
-}
-
-class TClass
-{
-public:
 	
-	int operator* (TClass rhs)
+	virtual void TestFunc()
 	{
-		return rhs.mData * mData;
+		cout << "Parent" << endl;
 	}
-	int mData;
 
-
+	virtual ~Parent()
+	{
+		cout << "Source ¼Ò¸ê" << endl;
+	}
 };
 
-void TestFunc(TClass a)
+class Child :public Parent
 {
-
-}
-
-int operator+(TClass& lhs, TClass& rhs)
-{
-	return lhs.mData + rhs.mData;
-}
-
-class TestClass2
-{
-	
-public:
-	int mData;
-	
-	char operator[](int index)
-	{
-		return text[index];
-	}
-	const char& operator[](int index)  const
-	{
-		return text[index];
-
-	}
-public:
-	std::string text;
-
-};
-
-struct Mother
-{
-
 public:
 	void TestFunc()
 	{
-
+		cout << "Child" << endl;
 	}
-};
-struct TestStruct: public Mother
-{
-	TestStruct()
+	~Child()
 	{
-		cout << "±¸Á¶Ã¼ »ý¼ºÀÚÀÌÁö·Õ";
+		cout << "Child ¼Ò¸ê" << endl;
 	}
-	~TestStruct()
-	{
-		cout << "±¸Á¶Ã¼ ¼Ò¸êÀÚÀÌÁö·Õ" << endl;
-	}
+	
 };
 
-class Test3
+class GrandChild :public Child
 {
 public:
-	Test3(const char* p)
+	~GrandChild()
 	{
-		mP = new char(3);
-		strcpy_s(mP,3, p);
-
+		cout << "Grand ¼Ò¸ê" << endl;
 	}
-	char& operator[](std::size_t index) const
-	{
-		return mP[index];
-	}
-
-private:
-	char* mP;
 };
+
+
 int main()
 {
-	Test3 a("hi1");
-	a[2] = 'c';
-
-
+	
+	printf("%x", htons(0x1234));
+	SOCK_DGRAM
 }
